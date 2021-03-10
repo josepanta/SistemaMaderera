@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group col-sm-8">
                             <label for="usuario_id">Usuario</label>
-                            <input id="usuario_id" name="usuario_id" type="text" class="form-control" placeholder="Fecha" value="{{ $movimiento->usuario_id }}" disabled>
+                            <input id="usuario_id" name="usuario_id" type="text" class="form-control" placeholder="Fecha" value="{{ $movimiento->user->name }}" disabled>
 
                         </div>
                     </div>
@@ -75,7 +75,7 @@
 <script>
   //Navegacion
   $(document).ready(function(){
-    $("#nav_item_movimientos ").addClass("menu-open");
+    $("#nav_item_movimientos").addClass("menu-open");
     $("#nav_item_title_movimientos").addClass("active");
     $("#nav_item_option_gestionar_movimientos").addClass("active");
   }); 

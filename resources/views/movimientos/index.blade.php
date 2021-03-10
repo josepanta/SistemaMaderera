@@ -54,7 +54,7 @@
                                         <td>{{ $movimiento->id }}</td>
                                         <td>{{ $movimiento->fecha }}</td>
                                         <td>{{ $movimiento->tipo_movimiento }}</td>
-                                        <td>{{ $movimiento->usuario_id }}</td>
+                                        <td>{{ $movimiento->user->name }}</td>
                                         <td>
                                           <div class="row justify-content-between">
                                             <input id="id" type="hidden" value="{{ $movimiento->id }}">

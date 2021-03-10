@@ -93,9 +93,9 @@
 <script>
   //Navegacion
   $(document).ready(function(){
-    $("#nav_item_existencias").addClass("menu-open");
-    $("#nav_item_title_existencias").addClass("active");
-    $("#nav_item_option_gestionar_existencias").addClass("active");
+    $("#nav_item_movimientos").addClass("menu-open");
+    $("#nav_item_title_movimientos").addClass("active");
+    $("#nav_item_option_gestionar_movimientos").addClass("active");
   }); 
 </script>
 @endsection

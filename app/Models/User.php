@@ -40,4 +40,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function movimiento(){
+        return $this->hasMany(Movimiento::class);
+    }
 }

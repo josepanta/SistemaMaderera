@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group col-sm-8">
                             <label for="tamaño_id">Tamaño</label>
-                            <input id="tamaño_id" name="tamaño_id" type="number" step="1" class="form-control" placeholder="Cantidad" value="{{ $existencia->tamaño_id }}" disabled>
+                            <input id="tamaño_id" name="tamaño_id" type="number" step="1" class="form-control" placeholder="Cantidad" value="{{ $existencia->tamaño->nombre }}" disabled>
                         </div>
                     </div>
                   </div>

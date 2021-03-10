@@ -54,7 +54,7 @@
                                         <td>{{ $existencia->id }}</td>
                                         <td>{{ $existencia->nombre }}</td>
                                         <td>{{ $existencia->cantidad }}</td>
-                                        <td>{{ $existencia->tamaño_id }}</td>
+                                        <td>{{ $existencia->tamaño->nombre }}</td>
                                         <td>
                                           <div class="row justify-content-between">
                                             <input id="id" type="hidden" value="{{ $existencia->id }}">

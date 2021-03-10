@@ -10,4 +10,8 @@ class Tamaño extends Model
     use HasFactory;
 
     protected $fillable = ['nombre','ancho','alto','grueso'];
+
+    function existencia(){
+        return $this->hasMany(Existencia::class);
+    }
 }
