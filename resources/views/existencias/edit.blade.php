@@ -32,7 +32,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="guardar_existencias" method="post" action="{{ route('exitencias.update', $existencia->id) }}">
+                <form id="guardar_existencias" method="post" action="{{ route('existencias.update', $existencia->id) }}">
                   {{ csrf_field() }}
                   {{ method_field('PATCH') }}
                   <div class="card-body">
@@ -50,7 +50,7 @@
                             <select id="tamaño_id" name="tamaño_id" class="form-control select">
                                 <option disabled selected>Selecciona</option>
                                 @foreach($tamaños as $tamaño)
-                                    @if( $existencia->tamaño_id == $tamaño->tamaño_id)
+                                    @if( $existencia->tamaño_id == $tamaño->id )
                                     <option value="{{ $tamaño->id }}" selected>{{ $tamaño->nombre }}</option>
                                     @else
                                     <option value="{{ $tamaño->id }}">{{ $tamaño->nombre }}</option>
@@ -65,7 +65,7 @@
                   <div class="card-footer">
                     <div class="d-flex justify-content-center">
                       <div class='col-sm-5'>
-                        <button type="submit" form="guardar_existencias" class="btn btn-primary btn-block">Agregar</button>
+                        <button type="submit" form="guardar_existencias" class="btn btn-primary btn-block">Guardar</button>
                       </div>
                       <div class='col-sm-5'>
                         <button id="cancelarButton" type="button" class="btn btn-danger btn-block">Cancelar</button>
@@ -95,7 +95,7 @@
 
 <script>
     $("#cancelarButton").click(function(){
-        window.location.href = "{{ route('habitaciones.index') }}";
+        window.location.href = "{{ route('existencias.index') }}";
     });
 </script>
 @endsection

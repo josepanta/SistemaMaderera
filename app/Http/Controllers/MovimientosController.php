@@ -27,9 +27,9 @@ class MovimientosController extends Controller
     public function create()
     {
         $usuarios = User::all();
-        $tipo_movimientos = ['ENTRADA', 'SALIDA'];
+        $tipos = ['ENTRADA', 'SALIDA'];
 
-        return view('existencias.create', compact('usuarios', 'tipo_movimientos')); 
+        return view('movimientos.create', compact('usuarios', 'tipos')); 
     }
 
     /**
@@ -68,8 +68,9 @@ class MovimientosController extends Controller
     {
         $movimiento = Movimiento::findOrFail($id);
         $usuarios = User::all();
+        $tipos = ['ENTRADA', 'SALIDA'];
         
-        return view('movimiento.edit', compact('movimiento','usuarios')); 
+        return view('movimientos.edit', compact('movimiento', 'usuarios', 'tipos')); 
     }
 
     /**
@@ -87,7 +88,7 @@ class MovimientosController extends Controller
         $movimiento->usuario_id = $request->usuario_id;
         $movimiento->save();
 
-        return redirect()->route('habitaciones.index');
+        return redirect()->route('movimientos.index');
     }
 
     /**

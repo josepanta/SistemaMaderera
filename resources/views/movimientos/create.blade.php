@@ -11,7 +11,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="{{ route('existencias.index') }}">Movimientos</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('movimientos.index') }}">Movimientos</a></li>
               <li class="breadcrumb-item active">Agregar</li>
             </ol>
           </div><!-- /.col -->
@@ -39,30 +39,30 @@
                     <div class="row">
                         <div class="form-group col-sm-8">
                             <label for="fecha">Fecha</label>
-                            <input id="fecha" name="fecha" type="date" class="form-control" placeholder="Fecha" value="{{ old('fecha) }}">
+                            <input id="fecha" name="fecha" type="date" class="form-control" placeholder="Fecha" value="{{ old('fecha') }}">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="tipo_movimiento">Tipo</label>
                             <select id="tipo_movimiento" name="tipo_movimiento" class="form-control select">
                                 <option disabled selected>Selecciona</option>
-                                @foreach($tipo_movimientos as $tipo_movimiento)
-                                    @if( old('tipo_movimiento') == $tipo_movimiento)
-                                    <option value="{{ $tipo_movimiento }}" selected>{{ $tipo_movimiento }}</option>
+                                @foreach( $tipos as $tipo )
+                                    @if( old('tipo_movimiento') == $tipo )
+                                    <option value="{{ $tipo }}" selected>{{ $tipo }}</option>
                                     @else
-                                    <option value="{{ $tipo_movimiento }}">{{ $tipo_movimiento }}</option>
+                                    <option value="{{ $tipo }}">{{ $tipo }}</option>
                                     @endif
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group col-sm-8">
-                            <label for="usuario_id">Tamaño</label>
+                            <label for="usuario_id">Usuarios</label>
                             <select id="usuario_id" name="usuario_id" class="form-control select">
                                 <option disabled selected>Selecciona</option>
                                 @foreach($usuarios as $usuario)
                                     @if( old('usuario_id') == $usuario->id)
-                                    <option value="{{ $usuario->id }}" selected>{{ $usuario->nombre }}</option>
+                                    <option value="{{ $usuario->id }}" selected>{{ $usuario->name }}</option>
                                     @else
-                                    <option value="{{ $usuario->id }}">{{ $usuario->nombre }}</option>
+                                    <option value="{{ $usuario->id }}">{{ $usuario->name }}</option>
                                     @endif
                                 @endforeach
                             </select>

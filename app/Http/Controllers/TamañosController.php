@@ -38,7 +38,7 @@ class TamañosController extends Controller
     {
         Tamaño::create($request->all());
         
-        return redirect()->route('tamaños.index');
+        return redirect()->route('tamanos.index');
     }
 
     /**
@@ -64,7 +64,7 @@ class TamañosController extends Controller
     {
         $tamaño = Tamaño::findOrFail($id);
         
-        return view('tamaño.edit', compact('tamaño')); 
+        return view('tamaños.edit', compact('tamaño')); 
     }
 
     /**
@@ -83,7 +83,7 @@ class TamañosController extends Controller
         $tamaño->grueso = $request->grueso;
         $tamaño->save();
 
-        return redirect()->route('tamaños.index');
+        return redirect()->route('tamanos.index');
     }
 
     /**
@@ -96,6 +96,6 @@ class TamañosController extends Controller
     {
         Tamaño::destroy($id);
 
-        return redirect()->route('tamaños.index');
+        return redirect()->route('tamanos.index');
     }
 }

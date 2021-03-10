@@ -53,7 +53,7 @@
                                     @if( old('tamaño') == $tamaño)
                                     <option value="{{ $tamaño->id }}" selected>{{ $tamaño->nombre }}</option>
                                     @else
-                                    <option value="{{ $tamaña->id }}">{{ $tamaño->nombre }}</option>
+                                    <option value="{{ $tamaño->id }}">{{ $tamaño->nombre }}</option>
                                     @endif
                                 @endforeach
                             </select>

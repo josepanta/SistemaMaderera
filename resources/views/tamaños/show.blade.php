@@ -11,7 +11,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="{{ route('tamaños.index') }}">Tamaños</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('tamanos.index') }}">Tamaños</a></li>
               <li class="breadcrumb-item active">Mostrar</li>
             </ol>
           </div><!-- /.col -->
@@ -45,7 +45,7 @@
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="alto">Alto</label>
-                            <input id="alto" name="alto" type="number" step="0.01" class="form-control" placeholder="Alto" value="{{ $tamaño->alto )}" disabled>
+                            <input id="alto" name="alto" type="number" step="0.01" class="form-control" placeholder="Alto" value="{{ $tamaño->alto }}" disabled>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="grueso">Grueso</label>
@@ -85,7 +85,7 @@
 
 <script>
     $('#regresarButton').click(function(){
-        window.location.href = "{{ route('habitaciones.index') }}";
+        window.location.href = "{{ route('tamanos.index') }}";
     });
 </script>
 @endsection

@@ -32,7 +32,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="guardar_movimientos" method="post" action="{{ route('movimientos.store') }}">
+                <form id="guardar_movimientos" method="post" action="{{ route('movimientos.update', $movimiento->id) }}">
                   {{ csrf_field() }}
                   {{ method_field('PATCH') }}
                   <div class="card-body">
@@ -45,24 +45,24 @@
                             <label for="tipo_movimiento">Tipo</label>
                             <select id="tipo_movimiento" name="tipo_movimiento" class="form-control select">
                                 <option disabled selected>Selecciona</option>
-                                @foreach($tipo_movimientos as $tipo_movimiento)
-                                    @if( $movimiento->tipo_movimiento ) == $tipo_movimiento)
-                                    <option value="{{ $tipo_movimiento }}" selected>{{ $tipo_movimiento }}</option>
+                                @foreach($tipos as $tipo)
+                                    @if( $movimiento->tipo_movimiento == $tipo )
+                                    <option value="{{ $tipo }}" selected>{{ $tipo }}</option>
                                     @else
-                                    <option value="{{ $tipo_movimiento }}">{{ $tipo_movimiento }}</option>
+                                    <option value="{{ $tipo }}">{{ $tipo }}</option>
                                     @endif
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group col-sm-8">
-                            <label for="usuario_id">Tamaño</label>
+                            <label for="usuario_id">Usuario</label>
                             <select id="usuario_id" name="usuario_id" class="form-control select">
                                 <option disabled selected>Selecciona</option>
                                 @foreach($usuarios as $usuario )
                                     @if( $movimiento->usuario_id ) == $usuario->id)
-                                    <option value="{{ $usuario->id }}" selected>{{ $usuario_id->nombre }}</option>
+                                    <option value="{{ $usuario->id }}" selected>{{ $usuario->name }}</option>
                                     @else
-                                    <option value="{{ $usuario->id }}">{{ $usuario_id->nombre }}</option>
+                                    <option value="{{ $usuario->id }}">{{ $usuario->name }}</option>
                                     @endif
                                 @endforeach
                             </select>
@@ -74,7 +74,7 @@
                   <div class="card-footer">
                     <div class="d-flex justify-content-center">
                       <div class='col-sm-5'>
-                        <button type="submit" form="guardar_movimientos" class="btn btn-primary btn-block">Agregar</button>
+                        <button type="submit" form="guardar_movimientos" class="btn btn-primary btn-block">Guardar</button>
                       </div>
                       <div class='col-sm-5'>
                         <button id="cancelarButton" type="button" class="btn btn-danger btn-block">Cancelar</button>
@@ -96,15 +96,15 @@
 <script>
   //Navegacion
   $(document).ready(function(){
-    $("#nav_item_existencias").addClass("menu-open");
-    $("#nav_item_title_existencias").addClass("active");
-    $("#nav_item_option_gestionar_existencias").addClass("active");
+    $("#nav_item_movimientos").addClass("menu-open");
+    $("#nav_item_title_movimientos").addClass("active");
+    $("#nav_item_option_gestionar_movimientos").addClass("active");
   }); 
 </script>
 
 <script>
     $("#cancelarButton").click(function(){
-        window.location.href = "{{ route('habitaciones.index') }}";
+        window.location.href = "{{ route('movimientos.index') }}";
     });
 </script>
 @endsection

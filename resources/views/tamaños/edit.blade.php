@@ -11,7 +11,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="{{ route('tamaños.index') }}">Tamaños</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('tamanos.index') }}">Tamaños</a></li>
               <li class="breadcrumb-item active">Editar</li>
             </ol>
           </div><!-- /.col -->
@@ -32,7 +32,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="guardar_tamaños" method="post" action="{{ route('tamaños.store', $tamaño->id) }}">
+                <form id="guardar_tamaños" method="post" action="{{ route('tamanos.update', $tamaño->id) }}">
                   {{ csrf_field() }}
                   {{ method_field('PATCH') }}
                   <div class="card-body">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="alto">Alto</label>
-                            <input id="alto" name="alto" type="number" step="0.01" class="form-control" placeholder="Alto" value="{{ $tamaño->alto )}">
+                            <input id="alto" name="alto" type="number" step="0.01" class="form-control" placeholder="Alto" value="{{ $tamaño->alto }}">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="grueso">Grueso</label>
@@ -60,7 +60,7 @@
                   <div class="card-footer">
                     <div class="d-flex justify-content-center">
                       <div class='col-sm-5'>
-                        <button type="submit" form="guardar_tamaños" class="btn btn-primary btn-block">Agregar</button>
+                        <button type="submit" form="guardar_tamaños" class="btn btn-primary btn-block">Guardar</button>
                       </div>
                       <div class='col-sm-5'>
                         <button id="cancelarButton" type="button" class="btn btn-danger btn-block">Cancelar</button>
@@ -82,15 +82,15 @@
 <script>
   //Navegacion
   $(document).ready(function(){
-    $("#nav_item_tamaños").addClass("menu-open");
-    $("#nav_item_title_tamaños").addClass("active");
+    $("#nav_item_existencias").addClass("menu-open");
+    $("#nav_item_title_existencias").addClass("active");
     $("#nav_item_option_gestionar_tamaños").addClass("active");
   }); 
 </script>
 
 <script>
     $("#cancelarButton").click(function(){
-        window.location.href = "{{ route('habitaciones.index') }}";
+        window.location.href = "{{ route('tamanos.index') }}";
     });
 </script>
 @endsection

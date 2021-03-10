@@ -37,16 +37,16 @@
                     <div class="row">
                         <div class="form-group col-sm-8">
                             <label for="fecha">Fecha</label>
-                            <input id="fecha" name="fecha" type="date" class="form-control" placeholder="Fecha" value="{{ $movimiento->fecha) }}">
+                            <input id="fecha" name="fecha" type="date" class="form-control" placeholder="Fecha" value="{{ $movimiento->fecha }}" disabled>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="tipo_movimiento">Tipo</label>
-                            <input id="tipo_movimiento" name="tipo_movimiento" type="date" class="form-control" placeholder="Fecha" value="{{ $movimiento->tipo_movimiento) }}">
+                            <input id="tipo_movimiento" name="tipo_movimiento" type="text" class="form-control" placeholder="Fecha" value="{{ $movimiento->tipo_movimiento }}" disabled>
 
                         </div>
                         <div class="form-group col-sm-8">
-                            <label for="usuario_id">Tamaño</label>
-                            <input id="usuario_id" name="usuario_id" type="date" class="form-control" placeholder="Fecha" value="{{ $movimiento->usuario_id) }}">
+                            <label for="usuario_id">Usuario</label>
+                            <input id="usuario_id" name="usuario_id" type="text" class="form-control" placeholder="Fecha" value="{{ $movimiento->usuario_id }}" disabled>
 
                         </div>
                     </div>
@@ -75,15 +75,15 @@
 <script>
   //Navegacion
   $(document).ready(function(){
-    $("#nav_item_existencias").addClass("menu-open");
-    $("#nav_item_title_existencias").addClass("active");
-    $("#nav_item_option_gestionar_existencias").addClass("active");
+    $("#nav_item_movimientos ").addClass("menu-open");
+    $("#nav_item_title_movimientos").addClass("active");
+    $("#nav_item_option_gestionar_movimientos").addClass("active");
   }); 
 </script>
 
 <script>
     $('#regresarButton').click(function(){
-        window.location.href = "{{ route('habitaciones.index') }}";
+        window.location.href = "{{ route('movimientos.index') }}";
     });
 </script>
 @endsection

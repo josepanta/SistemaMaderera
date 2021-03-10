@@ -38,13 +38,14 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="reservas_table" class="table table-bordered table-striped">
+                        <table id="existencias_table" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Cantidad</th>
                                     <th>Tamaño</th>
+                                    <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,9 +57,10 @@
                                         <td>{{ $existencia->tamaño_id }}</td>
                                         <td>
                                           <div class="row justify-content-between">
-                                            <button type="button" class="btn col-md-4 btn-primary btn-sm"><i class="fa fa-edit"></i >Editar</button>
-                                            <button type="button" class="btn col-md-3 btn-primary btn-sm"><i class="fa fa-eye"></i> Ver</button>
-                                            <button type="button" class="btn col-md-4 btn-primary btn-sm"><i class="fa fa-trash"></i> Eliminar</button>
+                                            <input id="id" type="hidden" value="{{ $existencia->id }}">
+                                            <button type="button" class="btn col-md-4 btn-primary btn-sm" onclick="javascript:editar($(this))"><i class="fa fa-edit"></i >Editar</button>
+                                            <button type="button" class="btn col-md-3 btn-primary btn-sm" onclick="javascript:mostrar($(this))"><i class="fa fa-eye"></i> Ver</button>
+                                            <button type="button" class="btn col-md-4 btn-primary btn-sm" onclick="javascript:eliminar($(this))"><i class="fa fa-trash"></i> Eliminar</button>
                                           </div>
                                         </td>
                                     </tr>
@@ -97,7 +99,7 @@
 <script>
   //DataTable
   $(function () {
-    $("#reservas_table").DataTable({
+    $("#existencias_table").DataTable({
       "ordering": false,
       "responsive": true,
       "pageLength": 5,
@@ -117,7 +119,7 @@
         "url": "{{ asset('plugins/language/spanish.json') }}"
       },
       "initComplete": function(){
-        $("#reservas_table").DataTable().buttons().container().appendTo('#reservas_table_wrapper .col-md-6:eq(0)')
+        $("#existencias_table").DataTable().buttons().container().appendTo('#existencias_table_wrapper .col-md-6:eq(0)')
       }
     });
   });

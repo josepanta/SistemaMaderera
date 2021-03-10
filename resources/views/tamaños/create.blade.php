@@ -11,7 +11,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="{{ route('tamaños.index') }}">Tamaños</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('tamanos.index') }}">Tamaños</a></li>
               <li class="breadcrumb-item active">Agregar</li>
             </ol>
           </div><!-- /.col -->
@@ -32,7 +32,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="guardar_tamaños" method="post" action="{{ route('tamaños.store') }}">
+                <form id="guardar_tamaños" method="post" action="{{ route('tamanos.store') }}">
                   {{ csrf_field() }}
                   
                   <div class="card-body">
@@ -79,8 +79,8 @@
 <script>
   //Navegacion
   $(document).ready(function(){
-    $("#nav_item_tamaños").addClass("menu-open");
-    $("#nav_item_title_tamaños").addClass("active");
+    $("#nav_item_existencias").addClass("menu-open");
+    $("#nav_item_title_existencias").addClass("active");
     $("#nav_item_option_gestionar_tamaños").addClass("active");
   }); 
 </script>

@@ -79,7 +79,7 @@
 
 <script>
     $('#regresarButton').click(function(){
-        window.location.href = "{{ route('habitaciones.index') }}";
+        window.location.href = "{{ route('existencias.index') }}";
     });
 </script>
 @endsection

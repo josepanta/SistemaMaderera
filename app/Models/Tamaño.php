@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tamaño extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nombre','ancho','alto','grueso'];
 }

@@ -68,7 +68,7 @@ class ExistenciasController extends Controller
         $existencia = Existencia::findOrFail($id);
         $tamaños = Tamaño::all();
         
-        return view('existencia.edit', compact('existencia','tamaños')); 
+        return view('existencias.edit', compact('existencia','tamaños')); 
     }
 
     /**
@@ -86,7 +86,7 @@ class ExistenciasController extends Controller
         $existencia->tamaño_id = $request->tamaño_id;
         $existencia->save();
 
-        return redirect()->route('habitaciones.index');
+        return redirect()->route('existencias.index');
     }
 
     /**

@@ -116,7 +116,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a id="nav_item_option_gestionar_tamaños" href="{{ route('tamaños.index') }}" class="nav-link">
+                                        <a id="nav_item_option_gestionar_tamaños" href="{{ route('tamanos.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tamaños</p>
                                         </a>

@@ -26,4 +26,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('existencias', ExistenciasController::class);
 Route::resource('movimientos', MovimientosController::class);
-Route::resource('tamaños', TamañosController::class);
+Route::resource('tamanos', TamañosController::class);
