@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ExistenciasController;
+use App\Http\Controllers\MovimientosController;
+use App\Http\Controllers\TamañosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('existencias', ExistenciasController::class);
+Route::resource('movimientos', MovimientosController::class);
+Route::resource('tamaños', TamañosController::class);
